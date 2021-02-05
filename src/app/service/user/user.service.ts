@@ -17,7 +17,7 @@ export class UserService {
   ) {
   }
 
-  resetPassword(username: string, password: string): Observable<any> {
+  resetPassword(username: string | undefined, password: string[]): Observable<any> {
     return this.http.put(API_URL + `/users/resetpassword/${username}`, password);
   }
 
