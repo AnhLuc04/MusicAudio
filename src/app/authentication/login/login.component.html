@@ -1,0 +1,29 @@
+<section class="blog-section spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="blog-post single-post">
+          <div class="comments">
+            <h5>ĐĂNG NHẬP</h5>
+
+            <form class="comment-form" [formGroup]="newFormLogin" (ngSubmit)="login()">
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" placeholder="Your name"  formControlName="username">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" placeholder="Your password" data-type="password" formControlName="password">
+                  <button class="site-btn">post Comment</button>
+                </div>
+                <!--                <div class="col-md-12">-->
+                <!--&lt;!&ndash;                  <textarea placeholder="Your message"></textarea>&ndash;&gt;-->
+                <!--                  <button class="site-btn">post Comment</button>-->
+                <!--                </div>-->
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
