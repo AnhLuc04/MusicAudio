@@ -1377,7 +1377,7 @@ Game Page
   height: 152px;
   left: 25px;
   top: 25px;
-  background-image: url("../img/work-line.png");
+  background-image: url("src/assets/img/work-line.png");
   background-repeat: no-repeat;
   background-size: contain;
 }

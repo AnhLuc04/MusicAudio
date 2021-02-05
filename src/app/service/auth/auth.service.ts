@@ -27,10 +27,21 @@ export class AuthService {
   }
 
   // tslint:disable-next-line:typedef
-  login(username: string, password: string) {
-    return this.http.post(API_URL + '/login', {username, password})
+  // login(username: string, password: string) {
+  //   return this.http.post(API_URL + '/login', {username, password})
+  //     .pipe(map(user => {
+  //       localStorage.setItem('user', JSON.stringify(user));
+  //       this.currentUserSubject.next(user);
+  //       this.update.emit('login');
+  //       return user;
+  //     }));
+  // }
+  // tslint:disable-next-line:typedef
+  login(inputUser: User) {
+    return this.http.post(API_URL + '/login', inputUser)
       .pipe(map(user => {
         localStorage.setItem('user', JSON.stringify(user));
+        // @ts-ignore
         this.currentUserSubject.next(user);
         this.update.emit('login');
         return user;

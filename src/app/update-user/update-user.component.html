@@ -1,1 +1,210 @@
-<p>update-user works!</p>
+
+<!-- Page top section end -->
+
+<!-- Blog section -->
+<section class="blog-section spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="blog-post single-post">
+          <div class="comments">
+            <h5>Leave a comment</h5>
+            <form class="comment-form" [formGroup]="updateUserForm" (ngSubmit)="updateUser()">
+
+              <div>
+                  <img id="output" src="{{user.avatar}}" class="img" alt="User's Avatar">
+                    <b>Profile Photo</b>
+                    <p>Accepted file type .png. Less than 1MB</p>
+              </div>
+              <div>
+                    <input style="color: #0c1027" data-browse-on-zone="true" type="file" accept="image/*" (change)="loadFile($event)">
+                </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" placeholder="Your Full Name"   formControlName="fullName" [value]="user.fullName">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" placeholder="Your User Name" formControlName="username" readonly="readonly" [value]="user.username">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" placeholder="Your  Phone Number" formControlName="phoneNumber" [value]="user.phoneNumber" type="number">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" placeholder="Your  email" formControlName="email" [value]="user.email">
+                </div>
+                <div class="col-md-12">
+                  <input placeholder="Your Address" formControlName="address" [value]="user.address">
+                  <button class="site-btn">post Comment</button>
+                </div>
+              </div>
+            </form>
+
+
+<!--            <form [formGroup]="updateUserForm" (ngSubmit)="updateUser()">-->
+<!--              <div class="wrapper bg-white mt-sm-5">-->
+<!--                <h4 class="pb-4 border-bottom">Account settings</h4>-->
+<!--                <div id="box" class="d-flex align-items-start py-3 border-bottom">-->
+<!--                  <img id="output" src="{{user.avatar}}" class="img" alt="User's Avatar">-->
+<!--                  <div class="pl-sm-4 pl-2" id="img-section">-->
+<!--                    <b>Profile Photo</b>-->
+<!--                    <p>Accepted file type .png. Less than 1MB</p>-->
+<!--                    <input style="color: #0c1027" data-browse-on-zone="true" type="file" accept="image/*" (change)="loadFile($event)">-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="py-2">-->
+<!--                  <div class="row py-2">-->
+<!--                    <div class="col-md-6"> <label>User Name</label> <input type="text" formControlName="username" readonly="readonly" [value]="user.username" class="bg-light form-control"> </div>-->
+<!--                    <div class="col-md-6 pt-md-0 pt-3"> <label>Full Name</label> <input type="text" formControlName="fullName" [value]="user.fullName" class="bg-light form-control"> </div>-->
+
+<!--                  </div>-->
+<!--                  <div class="row py-2">-->
+<!--                    <div class="col-md-6 "> <label>Phone Number</label> <input formControlName="phoneNumber" [value]="user.phoneNumber" type="number" class="bg-light form-control"> </div>-->
+<!--                    <div class="col-md-6 pt-md-0 pt-3"> <label>Email</label> <input type="text" formControlName="email" [value]="user.email" class="bg-light form-control"> </div>-->
+<!--                  </div>-->
+<!--                  <div class="row py-2">-->
+<!--                    <div class="col-md-12"> <label>Address</label> <input type="text" formControlName="address" [value]="user.address" class="bg-light form-control"> </div>-->
+<!--                  </div>-->
+<!--                  <div class="py-3 pb-4 border-bottom">-->
+<!--                    <button type="submit" class="btn btn-success">Save</button>-->
+<!--                    <button class="btn btn-outline-light" style="color: black" [routerLink]="['/profile']">Cancel</button>-->
+<!--                  </div>-->
+<!--                  <div class="d-sm-flex align-items-center pt-3" id="resetpassword" >-->
+<!--                    <div> <b>Reset Your Password</b>-->
+<!--                      <p>Click button if you want to change your password</p>-->
+<!--                    </div>-->
+<!--                    <div class="ml-auto"> <button class="btn btn-outline-primary" [routerLink]="['/resetpassword']">Reset Password</button> </div>-->
+<!--                  </div>-->
+<!--                  <div class="d-sm-flex align-items-center pt-3" id="deactivate">-->
+<!--                    <div> <b>Deactivate your account</b>-->
+<!--                      <p>Details about your company account and password</p>-->
+<!--                    </div>-->
+<!--                    <div class="ml-auto"> <button class="btn btn-outline-danger">Deactivate</button> </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </form>-->
+
+          </div>
+        </div>
+      </div>
+      <!--      <div class="col-lg-4 sidebar">-->
+      <!--        <div class="sb-widget">-->
+      <!--          <form class="sb-search">-->
+      <!--            <input type="text" placeholder="Search">-->
+      <!--          </form>-->
+      <!--        </div>-->
+      <!--        <div class="sb-widget">-->
+      <!--          <h2 class="sb-title">Categories</h2>-->
+      <!--          <ul class="sb-cata-list">-->
+      <!--            <li><a href="">Games<span>20</span></a></li>-->
+      <!--            <li><a href="">Gaming Tips & Tricks<span>23</span></a></li>-->
+      <!--            <li><a href="">Online Games<span>25</span></a></li>-->
+      <!--            <li><a href="">Team Games<span>17</span></a></li>-->
+      <!--            <li><a href="">Community<span>15</span></a></li>-->
+      <!--            <li><a href="">Uncategorized<span>22</span></a></li>-->
+      <!--          </ul>-->
+      <!--        </div>-->
+      <!--        <div class="sb-widget">-->
+      <!--          <h2 class="sb-title">Latest News</h2>-->
+      <!--          <div class="latest-news-widget">-->
+      <!--            <div class="ln-item">-->
+      <!--              <img src="img/blog-thumbs/1.jpg" alt="">-->
+      <!--              <div class="ln-text">-->
+      <!--                <div class="ln-date">April 1, 2019</div>-->
+      <!--                <h6>10 Amazing new games</h6>-->
+      <!--                <div class="ln-metas">-->
+      <!--                  <div class="ln-meta">By Admin</div>-->
+      <!--                  <div class="ln-meta">in <a href="#">Games</a></div>-->
+      <!--                  <div class="ln-meta">3 Comments</div>-->
+      <!--                </div>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--            <div class="ln-item">-->
+      <!--              <img src="img/blog-thumbs/2.jpg" alt="">-->
+      <!--              <div class="ln-text">-->
+      <!--                <div class="ln-date">April 1, 2019</div>-->
+      <!--                <h6>10 Amazing new games</h6>-->
+      <!--                <div class="ln-metas">-->
+      <!--                  <div class="ln-meta">By Admin</div>-->
+      <!--                  <div class="ln-meta">in <a href="#">Games</a></div>-->
+      <!--                  <div class="ln-meta">3 Comments</div>-->
+      <!--                </div>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--            <div class="ln-item">-->
+      <!--              <img src="img/blog-thumbs/3.jpg" alt="">-->
+      <!--              <div class="ln-text">-->
+      <!--                <div class="ln-date">April 1, 2019</div>-->
+      <!--                <h6>10 Amazing new games</h6>-->
+      <!--                <div class="ln-metas">-->
+      <!--                  <div class="ln-meta">By Admin</div>-->
+      <!--                  <div class="ln-meta">in <a href="#">Games</a></div>-->
+      <!--                  <div class="ln-meta">3 Comments</div>-->
+      <!--                </div>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--            <div class="ln-item">-->
+      <!--              <img src="img/blog-thumbs/4.jpg" alt="">-->
+      <!--              <div class="ln-text">-->
+      <!--                <div class="ln-date">April 1, 2019</div>-->
+      <!--                <h6>10 Amazing new games</h6>-->
+      <!--                <div class="ln-metas">-->
+      <!--                  <div class="ln-meta">By Admin</div>-->
+      <!--                  <div class="ln-meta">in <a href="#">Games</a></div>-->
+      <!--                  <div class="ln-meta">3 Comments</div>-->
+      <!--                </div>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--        <div class="sb-widget">-->
+      <!--          <a href="#" class="add">-->
+      <!--            <img src="img/add-2.jpg" alt="">-->
+      <!--          </a>-->
+      <!--        </div>-->
+      <!--        <div class="sb-widget">-->
+      <!--          <h2 class="sb-title">Latest Comments</h2>-->
+      <!--          <div class="latest-comments-widget">-->
+      <!--            <div class="lc-item">-->
+      <!--              <img src="img/author-thumbs/1.jpg" alt="">-->
+      <!--              <div class="lc-text">-->
+      <!--                <h6>Jane Smith<span> In </span><a href="">The best 2019 Games</a></h6>-->
+      <!--                <div class="lc-date">April 1,2019</div>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--            <div class="lc-item">-->
+      <!--              <img src="img/author-thumbs/2.jpg" alt="">-->
+      <!--              <div class="lc-text">-->
+      <!--                <h6>Michael James<span> In </span><a href="">The best 2019 Games</a></h6>-->
+      <!--                <div class="lc-date">April 1,2019</div>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--            <div class="lc-item">-->
+      <!--              <img src="img/author-thumbs/3.jpg" alt="">-->
+      <!--              <div class="lc-text">-->
+      <!--                <h6>Jane Smith<span> In </span><a href="">The best 2019 Games</a></h6>-->
+      <!--                <div class="lc-date">April 1,2019</div>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--            <div class="lc-item">-->
+      <!--              <img src="img/author-thumbs/4.jpg" alt="">-->
+      <!--              <div class="lc-text">-->
+      <!--                <h6>Michael James<span> In </span><a href="">The best 2019 Games</a></h6>-->
+      <!--                <div class="lc-date">April 1,2019</div>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--            <div class="lc-item">-->
+      <!--              <img src="img/author-thumbs/1.jpg" alt="">-->
+      <!--              <div class="lc-text">-->
+      <!--                <h6>Jane Smith<span> In </span><a href="">The best 2019 Games</a></h6>-->
+      <!--                <div class="lc-date">April 1,2019</div>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+    </div>
+  </div>
+</section>
+<!-- Blog section end -->
