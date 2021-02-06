@@ -5,14 +5,13 @@
         <div class="blog-post single-post">
           <div class="comments">
             <h5>ĐĂNG NHẬP</h5>
-
             <form class="comment-form" [formGroup]="newFormLogin" (ngSubmit)="login()">
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-7">
                   <input type="text" placeholder="Your name"  formControlName="username">
                 </div>
-                <div class="col-md-6">
-                  <input type="text" placeholder="Your password" data-type="password" formControlName="password">
+                <div class="col-md-7">
+                  <input type="password" placeholder="Your password" data-type="password" formControlName="password">
                   <button class="site-btn">LoGin</button>
                 </div>
               </div>

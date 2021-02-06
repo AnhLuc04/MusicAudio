@@ -10,7 +10,7 @@ import {UpdatePasswordComponent} from './authentication/update-password/update-p
 
 const routes: Routes = [
   {
-    path : '',
+    path : 'update/password',
     component : UpdatePasswordComponent
   },
   {
@@ -18,7 +18,7 @@ const routes: Routes = [
     component: SignUpComponent,
   },
   {
-    path: 'login',
+    path: '',
     component: LoginComponent,
   },
   {

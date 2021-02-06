@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreatUserComponent } from './creat-user/creat-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -23,7 +22,6 @@ import { UpdatePasswordComponent } from './authentication/update-password/update
 @NgModule({
   declarations: [
     AppComponent,
-    CreatUserComponent,
     UpdateUserComponent,
     HeaderComponent,
     FooterComponent,
